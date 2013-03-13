@@ -1,9 +1,9 @@
 # Phaxion
 
-A (hopefully) small wrapper around the Phaxio API.
-I would like it to support the PhaxCodes API as well.
+A (hopefully) small wrapper around the [Phaxio API](https://www.phaxio.com/docs).
+I would like it to support their PhaxCodes API as well.
 
-NOTE: I have borrowed gratuitously from [this gem](https://github.com/gristmill/phaxio) so all credit goes to that author.
+NOTE: I have borrowed gratuitously from [this phaxio gem](https://github.com/gristmill/phaxio) so all credit should probably go to that author.
 
 ## Installation
 
@@ -21,7 +21,24 @@ Or install it yourself as:
 
 ## Usage
 
-  Make the magic happen...
+  ```ruby
+  # initialize with your keys
+  Phaxion.api_keys = '7d7f87d7f8d78f7'
+  Phaxion.api_secret = '999dfdf33f3f'
+  
+  # OR
+  Phaxion.configuration do |cfg|
+    cfg.api_key = "8udf8duf8duf"
+  	cfg.api_secret = "34jhdf873jh"
+  end
+  
+  # enjoy the magic
+  Phaxion.fax(to: '555-123-1234' string_data:"hello there fax people!")
+  
+  # you are mad at me cause I was lazy and did not wrap one of the Phaxio API methods...
+  # just call it directly
+  Phaxion.direct(:send, to: '555-123-1234' string_data:"hello there fax people!")
+  ```
 
 ## Contributing
 
