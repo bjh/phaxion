@@ -8,7 +8,7 @@ module Phaxion
     ]
 
     def self.url(api_method)
-      "#{@@api_url}/#{api_method}"
+      "#{@@api_url}/#{api_method.to_s}"
     end
 
     def self.respond_to?(method)
@@ -26,6 +26,10 @@ module Phaxion
 
       # puts "url: #{url(method)}"
       # puts "query: #{Hash[*args].merge({api_key: api_key, api_secret: api_secret})}"
+      post(url(method), query: Hash[*args].merge({api_key: api_key, api_secret: api_secret}))
+    end
+
+    def self.direct(method, *args)
       post(url(method), query: Hash[*args].merge({api_key: api_key, api_secret: api_secret}))
     end
 
