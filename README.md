@@ -1,7 +1,9 @@
 # Phaxion
 
-A (hopefully) small wrapper around the [Phaxio API](https://www.phaxio.com/docs).
-I would like it to support their PhaxCodes API as well.
+**pronounced like Faction**  
+
+A (hopefully) small wrapper around the [Phaxio API](https://www.phaxio.com/docs).  
+I would like it to support their PhaxCodes API as well.  
 
 NOTE: I have borrowed gratuitously from [this phaxio gem](https://github.com/gristmill/phaxio) so all credit should probably go to that author.
 
