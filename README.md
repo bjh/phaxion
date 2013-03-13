@@ -3,7 +3,7 @@
 A (hopefully) small wrapper around the Phaxio API.
 I would like it to support the PhaxCodes API as well.
 
-NOTE: I have borrowed gratuitously from this gem [phaxio](https://github.com/gristmill/phaxio) so all credit goes to that author.
+NOTE: I have borrowed gratuitously from [this gem](https://github.com/gristmill/phaxio) so all credit goes to that author.
 
 ## Installation
 
