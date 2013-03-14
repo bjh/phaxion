@@ -7,6 +7,11 @@ I would like it to support their PhaxCodes API as well.
 
 NOTE: I have borrowed gratuitously from [this phaxio gem](https://github.com/gristmill/phaxio) so all credit should probably go to that author.
 
+ANOTHER NOTE: let's be honest, almost every single gemified API wrapper is a messy wrapper around HttParty.   
+Now that is one useful gem.  
+The only real win here is managing the API keys...so in reality you can call all the Phaxio
+API methods with `Phaxion.direct(:phaxio_api_method, arg1:123, arg2:'magic')`, the rest of this gem is fluff. I should have named it fluffy...dammit!
+
 ## Installation
 
 Add this line to your application's Gemfile:
