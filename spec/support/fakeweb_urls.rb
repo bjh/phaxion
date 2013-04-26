@@ -12,20 +12,12 @@ module Fake
   end
 
   def self.register(action)
-    # puts "Fake.register: %s" % "#{@@base_url}/#{action.to_s}"
     FakeWeb.register_uri(:post, "#{@@base_url}/#{action.to_s}", body:body(action), content_type:content_type)
   end
 end
 
-
-Fake.register(:send)
-# Fake.register(:testReceive)
-# Fake.register(:provisionNumber)
-# Fake.register(:releaseNumber)
-# Fake.register(:numberList)
-# Fake.register(:faxFile)
-# Fake.register(:faxList)
-# Fake.register(:faxStatus)
-# Fake.register(:faxCancel)
-# Fake.register(:accountStatus)
+# load all the fakeweb responses and register them by name/API call
+Dir[File.dirname(__FILE__) + "/responses/*.json"].each do |file| 
+  Fake.register(File.basename(file, ".*" ))
+end
 

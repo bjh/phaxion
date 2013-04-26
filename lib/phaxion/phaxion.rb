@@ -1,18 +1,17 @@
+require 'active_support'
+require 'active_support/core_ext/string'
+
 module Phaxion
     include HTTMultiParty
 
     @@api_url = 'https://api.phaxio.com/v1'
-    @@api_methods = [
-      :send,
-      :testReceive
-    ]
 
     def self.url(api_method)
       "#{@@api_url}/#{api_method.to_s}"
     end
 
-    def self.respond_to?(method)
-      @@api_methods.include?(method.to_sym)
+    def self.renamer(method)
+      method.to_s.camelize(:lower)
     end
 
     def self.method_missing(method, *args, &block)
@@ -20,17 +19,12 @@ module Phaxion
         method = :send
       end
 
-      if not @@api_methods.include? method.to_sym
-        return super
-      end
-
-      # puts "url: #{url(method)}"
-      # puts "query: #{Hash[*args].merge({api_key: api_key, api_secret: api_secret})}"
+      method = renamer(method)
       post(url(method), query: Hash[*args].merge({api_key: api_key, api_secret: api_secret}))
     end
 
     def self.direct(method, *args)
-      post(url(method), query: Hash[*args].merge({api_key: api_key, api_secret: api_secret}))
+      post(url(renamer(method)), query: Hash[*args].merge({api_key: api_key, api_secret: api_secret}))
     end
 
     def self.configuration
@@ -38,7 +32,7 @@ module Phaxion
     end
 
     module Configuration
-    	attr_accessor :api_key, :api_secret
+      attr_accessor :api_key, :api_secret
     end
 
     extend Configuration
