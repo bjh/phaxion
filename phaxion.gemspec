@@ -7,8 +7,8 @@ Gem::Specification.new do |gem|
   gem.name          = "phaxion"
   gem.version       = Phaxion::VERSION
   gem.authors       = ["bjh"]
-  gem.email         = ["brodie.hanbuch@gmail.com"]
-  gem.description   = %q{give the Phaxio API a nice big hug.}
+  gem.email         = ["bjh@fake.fake"]
+  gem.description   = %q{giving the Phaxio API a nice big hug.}
   gem.summary       = %q{Phaxio API wrapper}
   gem.homepage      = ""
 
