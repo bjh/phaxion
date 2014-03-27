@@ -10,7 +10,7 @@ Gem::Specification.new do |gem|
   gem.email         = ["bjh@fake.fake"]
   gem.description   = %q{giving the Phaxio API a nice big hug.}
   gem.summary       = %q{Phaxio API wrapper}
-  gem.homepage      = ""
+  gem.homepage      = "https://github.com/bjh/phaxion"
 
   gem.files         = `git ls-files`.split($/)
   gem.executables   = gem.files.grep(%r{^bin/}).map{ |f| File.basename(f) }
