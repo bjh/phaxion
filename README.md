@@ -36,7 +36,7 @@ Or install it yourself as:
 
   ```ruby
   # initialize with your keys
-  Phaxion.api_keys = '7d7f87d7f8d78f7'
+  Phaxion.api_key = '7d7f87d7f8d78f7'
   Phaxion.api_secret = '999dfdf33f3f'
   
   # OR
