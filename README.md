@@ -53,8 +53,12 @@ Or install it yourself as:
   Phaxion.direct(:send, to: '555-123-1234', string_data:"hello there fax people!")
   
   # use camelCase OR Ruby style api names
-  Phaxion.test_receive == Phaxion.testReceive
+  Phaxion.test_receive
+  # OR
+  Phaxion.testReceive
   ```
+
+**NOTE:** using 555 as a prefix does not count as a real phone number even when testing...Phaxio will return an error.
 
 ## Contributing
 
