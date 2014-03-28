@@ -46,11 +46,11 @@ Or install it yourself as:
   end
   
   # enjoy the magic
-  Phaxion.fax(to: '555-123-1234' string_data:"hello there fax people!")
+  Phaxion.fax(to: '555-123-1234', string_data:"hello there fax people!")
   
   # you are mad at me cause I was lazy and did not wrap one of the Phaxio API methods...
   # just call it directly
-  Phaxion.direct(:send, to: '555-123-1234' string_data:"hello there fax people!")
+  Phaxion.direct(:send, to: '555-123-1234', string_data:"hello there fax people!")
   
   # use camelCase OR Ruby style api names
   Phaxion.test_receive == Phaxion.testReceive
